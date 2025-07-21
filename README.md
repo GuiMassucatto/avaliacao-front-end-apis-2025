@@ -12,6 +12,16 @@ O objetivo deste desafio é avaliar suas habilidades em desenvolvimento de pági
 - **Framework:** Sem frameworks pesados, mas você pode usar bibliotecas leves como React ou Vue.js ou Bootstrap.
 - **API:** Utilize a API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para obter os dados e a API [DummyJSON](https://dummyjson.com/docs/auth) para autenticação de usuários.
 
+## Imagens do Projeto
+
+![Texto Alternativo](https://github.com/GuilhermeCanina/avaliacao-front-end-apis-2025/blob/37405c611765a61bbd3cd0c99f39ac2df41370e3/Captura%20Login.png)
+
+![Texto Alternativo](https://github.com/GuilhermeCanina/avaliacao-front-end-apis-2025/blob/37405c611765a61bbd3cd0c99f39ac2df41370e3/Captura%20de%20tela%20inicial.png)
+
+![Texto Alternativo](https://github.com/GuilhermeCanina/avaliacao-front-end-apis-2025/blob/37405c611765a61bbd3cd0c99f39ac2df41370e3/Captura%20de%20tela%20pesquisa.png)
+
+![Texto Alternativo](https://github.com/GuilhermeCanina/avaliacao-front-end-apis-2025/blob/1b0c2b49313b565c5bd62b7fad2679bb47547054/Captura%20de%20tela%20detalhes.png)
+
 ## Funcionalidades
 
 ### 1. Tela de Login
