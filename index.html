@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Redirecionar para ./pages/login.html -->
-    <title>Redirecionamento</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect</title>
     <script>
-        window.location.href = './pages/login.html';
+        const token = localStorage.getItem('token');
+        window.location.href = token ? './pages/posts.html' : './pages/login.html';
     </script>
 </head>
+
+<body></body>
 
 </html>
