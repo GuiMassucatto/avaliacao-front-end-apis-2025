@@ -14,13 +14,13 @@ O objetivo deste desafio é avaliar suas habilidades em desenvolvimento de pági
 
 ## Imagens do Projeto
 
-![Texto Alternativo](./src/login.png)
+![Texto Alternativo](./src/.png)
 
-![Texto Alternativo](./src/post.png)
+![Texto Alternativo](./src/.png)
 
-![Texto Alternativo](./src/modal.png)
+![Texto Alternativo](./src/.png)
 
-![Texto Alternativo](./src/pesquisa.png)
+![Texto Alternativo](./src/.png)
 
 ## Funcionalidades
 
