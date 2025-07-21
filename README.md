@@ -12,6 +12,16 @@ O objetivo deste desafio é avaliar suas habilidades em desenvolvimento de pági
 - **Framework:** Sem frameworks pesados, mas você pode usar bibliotecas leves como React ou Vue.js ou Bootstrap.
 - **API:** Utilize a API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/) para obter os dados e a API [DummyJSON](https://dummyjson.com/docs/auth) para autenticação de usuários.
 
+## Imagens do Projeto
+
+![Texto Alternativo](./src/.png)
+
+![Texto Alternativo](./src/.png)
+
+![Texto Alternativo](./src/.png)
+
+![Texto Alternativo](./src/.png)
+
 ## Funcionalidades
 
 ### 1. Tela de Login
