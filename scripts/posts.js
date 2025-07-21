@@ -25,7 +25,7 @@ function renderPosts(postList) {
   postsContainer.innerHTML = '';
   postList.forEach(post => {
     const card = document.createElement('div');
-    card.className = 'post-card';
+    card.className = 'card-post';
     card.textContent = post.title;
     card.addEventListener('click', () => showModal(post));
     postsContainer.appendChild(card);
