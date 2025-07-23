@@ -1,28 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../styles/main.css">
-</head>
+        <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #cccccc;
+            margin: 0;
+        }
 
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .login-container h2 {
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 2em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        .mensagem-erro {
+            color: #e74c3c;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            text-align: left;
+        }
+
+        button[type="submit"] {
+            background-color: #333333;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: black;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                margin: 20px;
+                padding: 30px;
+            }
+            .login-container h2 {
+                font-size: 1.8em;
+            }
+            button[type="submit"] {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+
+        footer {
+            background-color: #333333; 
+            color: white;  
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px; 
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        footer strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
 <body>
-    <div class="container login-container">
-        <h1>Login</h1>
-        <form id="login-form">
-            <input type="text" id="username" placeholder="Usuário" required />
-            <input type="password" id="password" placeholder="Senha" required />
+    <div class="login-container">
+        <h2>Entrar</h2>
+        <form id="formularioLogin">
+            <div class="input-group">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="duracaoSessao">Duração da sessão (minutos):</label>
+                <input type="number" id="duracaoSessao" value="60" min="1" max="1440" title="Tempo em minutos que a sessão ficará ativa (máx: 1440 min = 24h)">
+            </div>
+            <p id="mensagemErro" class="mensagem-erro"></p>
             <button type="submit">Entrar</button>
         </form>
-        <p id="login-error" class="error-message"></p>
     </div>
+
+    <footer>
+        <p>Desenvolvido por: <strong>Guilherme Stafocher Massucatto</strong></p>
+    </footer>
 
     <script src="../scripts/login.js"></script>
 </body>
-
- <footer>
-    <p>Desenvolvido por: <strong>Guilherme Stafocher Massucatto</strong></p>
-</footer>
-
 </html>

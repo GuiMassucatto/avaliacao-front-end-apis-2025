@@ -1,27 +1,40 @@
-document.getElementById('login-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+const form = document.getElementById("formularioLogin");
 
-  const username = document.getElementById('username').value.trim();
-  const password = document.getElementById('password').value.trim();
+form.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-  try {
-    const res = await fetch('https://dummyjson.com/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
-    });
+    const usuario = document.getElementById("usuario").value;
+    const senha = document.getElementById("senha").value;
+    const duracaoInput = document.getElementById("duracaoSessao");
+    const duracaoMinutos = duracaoInput ? parseInt(duracaoInput.value) : 60;
 
-    const data = await res.json();
+    try {
+        const response = await fetch('https://dummyjson.com/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: usuario,
+                password: senha
+            })
+        });
 
-    if (res.ok) {
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('username', data.username);
-      localStorage.setItem('tokenCreatedAt', Date.now());
-      window.location.href = './posts.html';
-    } else {
-      throw new Error(data.message || 'Erro ao fazer login.');
+        const data = await response.json();
+
+        if (response.ok) {
+            const duracaoMs = duracaoMinutos * 60 * 1000;
+            const expiresAt = Date.now() + duracaoMs;
+
+            localStorage.setItem("accessToken", data.token);
+            localStorage.setItem("refreshToken", data.refreshToken);
+            localStorage.setItem("user", JSON.stringify(data));
+            localStorage.setItem("expiresAt", expiresAt.toString());
+
+            window.location.href = "posts.html";
+        } else {
+            document.getElementById("mensagemErro").textContent = data.message || "Erro ao autenticar.";
+        }
+    } catch (error) {
+        document.getElementById("mensagemErro").textContent = "Erro na conexão com o servidor.";
+        console.error("Erro no login:", error);
     }
-  } catch (err) {
-    document.getElementById('login-error').textContent = err.message;
-  }
 });
